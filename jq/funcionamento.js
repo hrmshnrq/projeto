@@ -15,24 +15,45 @@ function fLocalValidaCampos (){
 
     if(nome==""){
         $("#Nome").addClass("erro");
+        else {
+            $("#Nome").removeClass("erro");
+        }
     }
     if(sobrenome==""){
         $("#Sobrenome").addClass("erro");
+    }        
+        else {
+            $("#Nome").removeClass("erro");
     }
     if(usuario==""){
         $("#Usuario").addClass("erro");
     }
+        else {
+            $("#Nome").removeClass("erro");
+    }
     if(matricula==""){
         $("#Matricula").addClass("erro");
+    }
+        else {
+            $("#Nome").removeClass("erro");
     }
     if(email==""){
         $("#E-mail").addClass("erro");
     }
+         else {
+           $("#Nome").removeClass("erro");
+    }
     if(senha==""){
         $("#Senha").addClass("erro");
     }
+        else {
+            $("#Nome").removeClass("erro");
+    }
     if(confirmarSenha==""){
         $("#ConfirmarSenha").addClass("erro");
+    }
+         else {
+           $("#Nome").removeClass("erro");
     }
     if(usuario !="" && senha !="" && email !="" && confirmarSenha!="" && matricula!="" && sobrenome !="" && nome !=""){
         $(location).attr('href', '../login.html');
@@ -52,8 +73,14 @@ function validalogin (){
     if(lusuario==""){
         $("#lusuario").addClass("erro");
     }
+         else {
+           $("#Nome").removeClass("erro");
+    }
     if(lsenha==""){
         $("#lsenha").addClass("erro");
+    }
+         else {
+           $("#Nome").removeClass("erro");
     }
     if(lusuario !="" && lsenha !=""){
         $(location).attr('href', 'sites/projeto.html');
