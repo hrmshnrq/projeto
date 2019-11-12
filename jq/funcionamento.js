@@ -1,3 +1,4 @@
+// Pagina de cadastro
 $(document).ready(function(){
     $("#salvar").click(function(){
         fLocalValidaCampos();
@@ -15,38 +16,31 @@ function fLocalValidaCampos (){
 
     if(nome==""){
         $("#Nome").addClass("erro");
-       
     }
     if(sobrenome==""){
         $("#Sobrenome").addClass("erro");
-    }        
-        
+    }
     if(usuario==""){
         $("#Usuario").addClass("erro");
     }
-        
     if(matricula==""){
         $("#Matricula").addClass("erro");
     }
-       
     if(email==""){
         $("#E-mail").addClass("erro");
     }
-         
     if(senha==""){
         $("#Senha").addClass("erro");
     }
-       
     if(confirmarSenha==""){
         $("#ConfirmarSenha").addClass("erro");
     }
-       
     if(usuario !="" && senha !="" && email !="" && confirmarSenha!="" && matricula!="" && sobrenome !="" && nome !=""){
-        $(location).attr('href', '../login.html');
+        $(location).attr('href', '../index.html');
     }
 }
 
-
+// usuario e senha suspenso em ajax
 $(document).ready(function(){
     $("#botao1").click(function(){
         validalogin();
@@ -56,17 +50,28 @@ $(document).ready(function(){
 function validalogin (){
     var lusuario = $("#lusuario").val();
     var lsenha = $("#lsenha").val();
+    
     if(lusuario==""){
         $("#lusuario").addClass("erro");
     }
        
     if(lsenha==""){
         $("#lsenha").addClass("erro");
-    }
-       
-    if(lusuario !="" && lsenha !=""){
-        $(location).attr('href', 'sites/projeto.html');
-    }
+    }   
+    $.ajax({
+
+        type: "POST",
+        url: "php/php.php",
+        dataType: "json",
+        data: {
+            pessoa: $("#lusuario").val(),
+            senhadapessoa: $("#lsenha").val(),
+        },
+        success:(function(retorno){
+            alert(retorno.mensagem);
+
+        })
+    })
 }
 
 $(document).ready(function(){
@@ -78,11 +83,26 @@ function passarpagina1 (){
     $(location).attr('href', 'sites/cadastro.html');
 }
 
+
+
+
+// função do botão cancelar em login
 $(document).ready(function(){
     $("#cancelar").click(function(){
         passarpagina2();
     });
 });
 function passarpagina2 (){
-    $(location).attr('href', '../login.html');
+    $(location).attr('href', '../index.html');
+}
+
+// Pesquisar no projeto
+$(document).ready(function(){
+    $("#pesquisar").click(function(){
+        pesquisarDoProjeto();
+    });
+});
+
+function pesquisarDoProjeto (){
+    var nome = $("#pesquisar").val();
 }
