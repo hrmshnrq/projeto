@@ -20,29 +20,34 @@
     $xml = new DOMDocument("1.0");
 
  //estruturas
- $xml_email = $xml->createElement("email");
- $xml_assunto = $xml->createElement("assunto");
- $xml_destinatario = $xml->createElement("destinatario");
- $xml_mensagem = $xml->createElement("mensagem");
- $xml_filtro = $xml->createElement("filtro");
+ $cpf = $_POST["cpf"];
+ $mail = $_POST["email"];
+ $nome = $_POST["nome"];
+ $sobre = $_POST["sobrenome"];
+ $senha = $_POST["senha"];
 
+ $xml = new DOMDocument("1.0");
 
- //destinatario, titulo e texto recebidos no teclado
- $xml_titulo = $xml->createElement("titulo", "nome do titulo");
- $xml_texto = $xml->createElement("texto", "texto que entra no teclado");
- $xml_destinatario = $xml->createElement("nome", "nome recebido no teclado");
- $xml_filtroNome = $xml->createElement("nome", "nome recebido no teclado");
- 
- //criancas
- $xml_email->appendChild($xml_assunto);
- $xml_email->appendChild($xml_destinatario);
- $xml_email->appendChild($xml_titulo);
- $xml_email->appendChild($xml_mensagem);
- $xml_filtro->appendChild($xml_filtroNome);
- $xml_email->appendChild($xml_filtro);
+ $dados = $xml->createElement("dados");
 
- $xml->appendChild($xml_email);
- $xml->save("novoemail.xml");
+ $xml_cpf = $xml->createElement("cpf", $cpf);
+ $xml_email = $xml->createElement("email", $mail);
+ $xml_nome = $xml->createElement("nome", $nome);
+ $xml_sobre = $xml->createElement("sobrenome", $sobre);
+ $xml_num = $xml->createElement("senha", $senha);
+
+ $dados->appendChild($xml_cpf);
+ $dados->appendChild($xml_email);
+ $dados->appendChild($xml_nome);
+ $dados->appendChild($xml_sobre);
+ $dados->appendChild($xml_end);
+ $dados->appendChild($xml_num);
+
+ $xml->appendChild($dados);
+
+ $xml->save("dados.xml");
+
+ echo json_encode("xml criado");
 
 
 
@@ -60,7 +65,6 @@
  $xml_nome1 = $xml->createElement("nome", $nome);
  $xml_senha = $xml->createElement("senha", $senha);
  $xml_sobrenome = $xml->createElement("sobrenome", $sobrenome);
- $xml_matricula = $xml->createElement("matricula", $matricula);
 
  
  //criancas
@@ -68,12 +72,11 @@
  $xml_usuario->appendChild($xml_nome);
  $xml_nome->appendChild($xml_nome1);
  $xml_nome->appendChild($xml_sobrenome);
- $xml_usuario->appendChild($xml_matricula);
  $xml_usuario->appendChild($xml_senha);
  $xml_dados->appendChild($usuario);
  $xml_dados->appendChild($nome);
 
  $xml->appendChild($xml_dados);
 
- $xml->save("novoemail.xml");
+ $xml->save("novousuario.xml");
 ?>
