@@ -224,4 +224,10 @@
 
 .fundo {
     background-color: white;
+    height: 30px;
+}
+
+.icone {
+    height: 20px;
+    width: 20px;
 }
