@@ -2,11 +2,7 @@
 // salvar em xml o novo usuario
 $(document).ready(function(){
     $("#salvar").click(function(){
-	    form();
-    })
-})
-
-function form() {
+	
 
 		var email = $("#E-mai").val();
 		var nome = $("#Nome").val();
@@ -15,19 +11,20 @@ function form() {
 
 		$.ajax({
 			type: "POST",
-			url: "../php/php.php",
-			dataType: "json",
-			data:{
-
-				email: email,
-				nome: nome,
-				sobre: sobre,
-				senha: senha,
-			},
+            url: "../php/php.php",
 			success: function(retorno){
-		}
-	})
-}
+                
+                var emailxml = "";
+                emailxml += retorno.email;
+                var senhaxml = "";
+		senhaxml += retorno.senha
+                
+		if(email == emailxml && senha == senhaxml)
+			$(location).attr('href', 'sites/projeto.html');
+		    }
+	    })  
+    });
+});
 
 
 // usuario e senha suspenso em ajax -> mudar para xml
