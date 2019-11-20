@@ -153,10 +153,10 @@
 }
 
 
-#emails{
+.emails{
     height: 92%;
     width: 85%;
-    background-color:   #B0C4DE;
+    
     position:relative;
     float: left;
 }
@@ -211,4 +211,17 @@
 
 .espaco1 {
     padding-left: 5px;
+}
+
+.fixtam {
+    height: 20px;
+    background: transparent;
+    border: none;
+    font-size: 14;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.fundo {
+    background-color: white;
 }
