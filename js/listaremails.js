@@ -21,7 +21,7 @@ $(document).ready(function(){
 			var conteudo = "";
 				var c = 0;
 
-				while(c < 26){
+				while(c < 20){
 					
 					conteudo += "<table class='fundo'>";
 					conteudo += "<tr >";
@@ -56,7 +56,7 @@ $(document).ready(function(){
 				var conteudo = "";
 				var c = 0;
 
-				while(c < 26){
+				while(c < 20){
 					
 					conteudo += "<table class='fundo'>";
 					conteudo += "<tr >";
