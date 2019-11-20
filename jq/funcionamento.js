@@ -1,46 +1,12 @@
-// Pagina de cadastro
-$(document).ready(function(){
-    $("#salvar").click(function(){
-        fLocalValidaCampos();
-    });
-});
-//adicionar classe erro
-function fLocalValidaCampos (){
-    var nome = $("#Nome").val();
-    var sobrenome = $("#Sobrenome").val();
-    var email = $("#E-mail").val();
-    var senha = $("#Senha").val();
-    var confirmarSenha = $("#ConfirmarSenha").val();
 
-    if(nome==""){
-        $("#Nome").addClass("erro");
-    }
-    if(sobrenome==""){
-        $("#Sobrenome").addClass("erro");
-    }
-    if(email==""){
-        $("#E-mail").addClass("erro");
-    }
-    if(senha==""){
-        $("#Senha").addClass("erro");
-    }
-    if(confirmarSenha==""){
-        $("#ConfirmarSenha").addClass("erro");
-    }
-    /*if(usuario !="" && email !="" && sobrenome !="" && nome !="" && senha == confirmarSenha ){
-        $(location).attr('href', '../index.html');
-    }*/
-}
 // salvar em xml o novo usuario
 $(document).ready(function(){
-
-	form();
-
+    $("#salvar").click(function(){
+	    form();
+    })
 })
 
-function form(){
-
-	$("#salvar").click(function(){
+function form() {
 
 		var email = $("#E-mai").val();
 		var nome = $("#Nome").val();
@@ -49,33 +15,19 @@ function form(){
 
 		$.ajax({
 			type: "POST",
-			url: "php/php.php",
+			url: "../php/php.php",
 			dataType: "json",
 			data:{
 
-				cpf: cpf,
 				email: email,
 				nome: nome,
-				sobrenome: sobre,
+				sobre: sobre,
 				senha: senha,
 			},
 			success: function(retorno){
-
-			}
-		})
+		}
 	})
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 // usuario e senha suspenso em ajax -> mudar para xml
@@ -123,19 +75,6 @@ function passarpagina1 (){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // função do botão cancelar em login
 $(document).ready(function(){
     $("#cancelar").click(function(){
@@ -145,14 +84,3 @@ $(document).ready(function(){
 function passarpagina2 (){
     $(location).attr('href', '../index.html');
 }
-
-// Pesquisar no projeto
-/*$(document).ready(function(){
-    $("#pesquisar").click(function(){
-        pesquisarDoProjeto();
-    });
-});
-
-function pesquisarDoProjeto (){
-    var nome = $("#pesquisar").val();
-}*/
