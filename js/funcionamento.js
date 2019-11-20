@@ -1,25 +1,3 @@
-
-// salvar em xml o novo usuario
-$(document).ready(function(){
-    $("#salvar").click(function(){
-	
-
-		var email = $("#E-mai").val();
-		var nome = $("#Nome").val();
-		var sobre = $("#Sobrenome").val();
-		var senha = $("#Senha").val();
-
-		$.ajax({
-			type: "POST",
-            url: "../php/php.php",
-			success: function(retorno){
-                
-            }
-	    })  
-    });
-});
-
-
 // usuario e senha suspenso em ajax -> mudar para xml
 $(document).ready(function(){
     $("#botao1").click(function(){
@@ -42,7 +20,7 @@ function validalogin (){
         $.ajax({
 
         type: "POST",
-        url: "php/criarusuario.php",
+        url: "php/login.php",
         dataType: "json",
         data: {
             usuario: lusuario,
@@ -62,23 +40,16 @@ function validalogin (){
     }
 }
 
+//cadastro na pagina de login
 $(document).ready(function(){
     $("#botao2").click(function(){
-        passarpagina1();
+        $(location).attr('href', 'sites/cadastro.html');
+
     });
 });
-function passarpagina1 (){
-    $(location).attr('href', 'sites/cadastro.html');
-}
-
-
-
 // função do botão cancelar em login
 $(document).ready(function(){
     $("#cancelar").click(function(){
-        passarpagina2();
+        $(location).attr('href', '../index.html');
     });
 });
-function passarpagina2 (){
-    $(location).attr('href', '../index.html');
-}
