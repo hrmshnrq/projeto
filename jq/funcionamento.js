@@ -14,14 +14,7 @@ $(document).ready(function(){
             url: "../php/php.php",
 			success: function(retorno){
                 
-                var emailxml = "";
-                emailxml += retorno.email;
-                var senhaxml = "";
-		senhaxml += retorno.senha
-                
-		if(email == emailxml && senha == senhaxml)
-			$(location).attr('href', 'sites/projeto.html');
-		    }
+            }
 	    })  
     });
 });
@@ -44,21 +37,29 @@ function validalogin (){
        
     if(lsenha==""){
         $("#lsenha").addClass("erro");
-    }   
-    $.ajax({
+    }
+    if(lusuario !="" && lsenha != ""){
+        $.ajax({
 
         type: "POST",
-        url: "php/php.php",
+        url: "php/criarusuario.php",
         dataType: "json",
         data: {
-            pessoa: $("#lusuario").val(),
-            senhadapessoa: $("#lsenha").val(),
+            usuario: lusuario,
+            senha: lsenha
         },
         success:(function(retorno){
-            alert(retorno.mensagem);
-
+            var emailxml = "";
+            emailxml += retorno.email;
+            var senhaxml = "";
+            senhaxml += retorno.senha;
+            
+            if (lusuario == emailxml && lsenha == senhaxml){
+                $(location).attr('href', 'sites/projeto.html');
+            }
         })
-    })
+        })
+    }
 }
 
 $(document).ready(function(){
