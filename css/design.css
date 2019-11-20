@@ -208,6 +208,15 @@
     border: solid 2px #1aace7;
 
 }
+.ficaigual1:hover {
+
+    cursor: pointer;
+}
+
+.ficaigual2:hover {
+    cursor: pointer;
+
+}
 
 .espaco1 {
     padding-left: 5px;
