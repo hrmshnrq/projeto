@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<email><assunto/><nome>nome recebido no teclado</nome><titulo>nome do titulo</titulo><mensagem/><filtro><nome>nome recebido no teclado</nome></filtro></email>
+<email><destinatario/><assunto/><mensagem/><filtro/></email>
