@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 				conteudo += "<td>" + retorno.assunto + "</td>";
 
-				conteudo += "<td>" + retorno. + "</td>";
+				conteudo += "<td>" + retorno.mensagem + "</td>";
 				conteudo += "</tr>";
 
 				conteudo += "</table>";
