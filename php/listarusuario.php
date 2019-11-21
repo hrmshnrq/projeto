@@ -2,7 +2,7 @@
 
    $email = $_POST["usuario"];
 
-   $a = file_get_contents("../xml/".$email.".xml");
+   $a = file_get_contents("../xml/usuarios/".$email.".xml");
    $b = simplexml_load_string($a);
    
    $retorno["email"] = trim($b->email);
