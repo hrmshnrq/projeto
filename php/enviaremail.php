@@ -23,7 +23,7 @@
 
 	$xml->appendChild($dados);
 
-	$xml->save("dados.xml");
+	$xml->save("../xml/enviados/dados.xml");
 
 	echo json_encode("xml criado");
 ?>
