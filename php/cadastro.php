@@ -22,7 +22,7 @@
 
     $xml->appendChild($xml_usuario);
 
-    $xml->save("../xml/".$email.".xml");
+    $xml->save("../xml/usuarios/".$email.".xml");
 
     echo json_encode("Conta criada com sucesso!!");
 
