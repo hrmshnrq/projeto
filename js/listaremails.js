@@ -43,7 +43,7 @@ $(document).ready(function(){
 	}
 	})
 
-//chama a lista de Emails da Caixa de Entrada:
+
 	$("#caixaenviados").click(function(){
 
 		$.ajax({
